@@ -14,9 +14,16 @@ builds:
       - linux
     flags:
       - -trimpath
+    mod_timestamp: "{{ .CommitTimestamp }}"
     ldflags:
       - -s
       - -w
+      - -X main.version={{.Version}}
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.CommitDate}}
+
+gomod:
+  proxy: true
 
 checksum:
   name_template: "checksums.txt"
