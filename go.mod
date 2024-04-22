@@ -1,3 +1,3 @@
 module github.com/g-linville/makefat
 
-go 1.13
+go 1.22
